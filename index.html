@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+         .myDiv {
+         border: 2px outset red;
+         background-color: lightblue;    
+         text-align: center;
+         }
+      </style>
+   </head>
+   <body>      
+      <script>
+         getParameterByName = function(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+         }
+         
+         var saveConsent = function() {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(redirect);
+            } else { 
+              x.innerHTML = "Geolocation is not supported by this browser.";
+            }            
+         }
+         
+         function redirect(position) {
+            var phone = getParameterByName('phone');
+            var saveHumanityApiUrl = "http://44.203.144.18:5050/saveprofile?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&phone=" + phone;
+            // var saveHumanityApiUrl = "http://localhost:5050/saveprofile?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&phone=" + phone;            
+            alert(saveHumanityApiUrl);
+            // location.href = saveHumanityApiUrl;
+         }
+                  
+      </script>
+      <div class="myDiv">
+         <h2>Save Humanity, Indian Embassy is here to help!</h2>
+         <p>If you are stuck in Ukraine and need immediate assistance in getting out, then please click "Submit" button below.</p>
+         <p>
+            <input type="button" value="Submit" onclick="saveConsent();" />
+         </p>
+      </div>
+   </body>
+</html>
