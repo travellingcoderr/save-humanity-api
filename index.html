@@ -30,10 +30,11 @@
          
          function redirect(position) {
             var phone = getParameterByName('phone');
-            var saveHumanityApiUrl = "http://44.203.144.18:5050/saveprofile?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&phone=" + phone;
+            // var saveHumanityApiUrl = "http://44.203.144.18:5050/saveprofile?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&phone=" + phone;
+            var saveHumanityApiUrl = "https://save-humanity-api.azurewebsites.net/saveprofile?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&phone=" + phone;
             // var saveHumanityApiUrl = "http://localhost:5050/saveprofile?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&phone=" + phone;            
-            alert(saveHumanityApiUrl);
-            // location.href = saveHumanityApiUrl;
+            // alert(saveHumanityApiUrl);
+            location.href = saveHumanityApiUrl;
          }
                   
       </script>
