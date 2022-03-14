@@ -40,6 +40,6 @@ exports.saveprofile = async(req, res) => {
         console.log(error);
         return res
         .status(500)
-        .json({ general: "Something went  in getaddress, please try again" + res});          
+        .json({ general: "Something went  in saveprofile, please try again" + error});          
     }
 }
