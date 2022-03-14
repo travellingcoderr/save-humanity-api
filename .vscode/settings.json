@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/7cfff2b4-d952-4b55-838c-03f746e5197b/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/save-humanity-api",
+    "appService.deploySubpath": "."
+}
